@@ -1,21 +1,28 @@
+	
+TARGET = test.elf
+CC_FLAGS = -Wall -O3
+LD_FLAGS =
+LD_LIB = -lm -lc
+OBJ_FILES = ray_generator.o test_loop.o intersect_f.o
 
-all: main.c ray_generator.c
-#	gcc -Wall main.c ray_generator.c -Xlinker -lm -o main.elf
-	gcc -Wall  -o main.elf main.c ray_generator.c -lm
+### Compiling ###
 
-##CC_FLAGS = -Wall
-##LD_FLAGS = -Xlinker -lm
-##-e main -lm -lc -A i386
+all: $(TARGET)
 
-##all: main.elf
+test_loop.o: test_loop.c
+	gcc $(CC_FLAGS) -c $<
 
-##main.o: main.c
-##	gcc $(CC_FLAGS) -c $<
+ray_generator.o: ray_generator.c
+	gcc $(CC_FLAGS) -c $<
 
-#ray_generator.o: ray_generator.c
-#	gcc $(CC_FLAGS) -c $<
+intersect_f.o: intersect_f.c
+	gcc $(CC_FLAGS) -c $<
 
-#main.elf: main.o ray_generator.o
-#	gcc $(LD_FLAGS) main.o ray_generator.o
-## -o $@
+### Linking ###
+
+$(TARGET): $(OBJ_FILES)
+	gcc $(LD_FLAGS) $(OBJ_FILES) $(LD_LIB) -o $@
+
+clean:
+	rm $(TARGET) $(OBJ_FILES)
 

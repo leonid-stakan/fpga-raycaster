@@ -7,6 +7,9 @@
 #define M_PI 3.14159265358979323846
 #endif
 
+/*To output debug info define this macros */
+#define DEBUG_INF
+
 /* Framebuffer */
 #define IMAGE_WIDTH		120
 #define IMAGE_HEIGHT	60
@@ -31,7 +34,7 @@ extern unsigned short nobjects;
 extern unsigned short nindices;
 
 /* Availible functions*/
-void do_render(void);
+void ray_generator(void);
 int SimpleSphereIntersect(tRay *, tSphere *);
 
 #endif // _COMMONS_H_

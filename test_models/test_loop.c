@@ -25,6 +25,16 @@ int main(int argc, char *argv[])
 	my_sphere.centr.y = 15.0f;
 	my_sphere.centr.z = 0.0f;
 	my_sphere.rad = 30.0f;
+
+//	triangle.a = {0,0,0};
+//	triangle.b = {0;0;0};
+//	triangle.c = {0;0;0};
+
+/*	triangle = {
+		0,0,0,
+		0,0,0,
+		0,0,0
+	};*/
 	
 /*	tRay my_ray;
 	my_ray.o = camera.position;

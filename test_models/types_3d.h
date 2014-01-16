@@ -3,7 +3,11 @@
 
 #include <math.h>
 
-/* Point type */
+/* Be careful, tPoint type is used both for points and 
+ * for vectors. And for vector can be two cases: where 
+ * members of this structure are considered as the ends 
+ * of vector or as projections of vector. 
+ */
 typedef struct {
 	float x;
 	float y;
